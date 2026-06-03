@@ -1,50 +1,162 @@
-# Clustering of MIGHTEE data
+# Classification of MIGHTEE Sources Using Machine Learning
 
-#### Status:Done
+## Overview
 
-## Description
-   
-Welcome to the MIGHTEE hackathon project! This project includes the following tutorials:
+Welcome to the MIGHTEE Hackathon!
 
-- *Tutorial 1* : Data Exploration
-- *Tutorial 2* : Clustering
+In this project, you will apply modern data science and machine learning techniques to tackle a real astrophysical classification problem using data from one of the deepest radio continuum surveys ever conducted.
 
+Radio emission from galaxies is primarily powered by two physical processes: **star formation** and **accretion onto supermassive black holes**. Distinguishing between sources dominated by these mechanisms is essential for understanding galaxy evolution and maximizing the scientific return of current and future radio surveys.
 
-## Data
+Through a series of guided Jupyter notebooks, you will build a complete machine learning workflow, from data exploration and preprocessing to dimensionality reduction, clustering, and supervised classification. Along the way, you will gain hands-on experience with astronomical datasets while developing practical machine learning skills.
 
-The MIGHTEE dataset is used for these tutorials. It contains 2824 data points, where a data point belongs to either a [star forming galaxies](https://www.cfa.harvard.edu/news/understanding-star-forming-galaxies) "SFGs" or [active galactic nuclei](https://en.wikipedia.org/wiki/Active_galactic_nucleus) "AGN".
+By the end of this project, you will have:
 
+* Explored and cleaned a MIGHTEE dataset.
+* Applied dimensionality reduction techniques to high-dimensional data.
+* Investigated both linear and non-linear feature representations.
+* Built and evaluated machine learning classifiers.
+* Interpreted model performance using standard diagnostic metrics and visualizations.
 
-## Hackathon Task
-After completing the tutorials, teams will be asked to present the best machine learning clustering model that distinguishes between SFGs and AGN. Note that this problem is an unsupervised learning challenge, meaning teams will need to rely on algorithms that do not require labeled data for model training. Few examples can be found [here](https://scikit-learn.org/stable/modules/clustering.html).  However, a labeled validation set is be provided to validate the performance of the clustering models.
+---
 
+## Project Structure
 
-### Would you like to clone this repository? Feel free!
+The project is organized into three core notebooks:
 
-```bash
-git clone https://github.com/Hack4Dev/mightee_hack.git
+### Notebook 1: Data Exploration
+
+* Data inspection and quality assessment
+* Handling missing values
+* Exploratory data analysis (EDA)
+* Feature normalization and preprocessing
+
+### Notebook 2: Dimensionality Reduction
+
+* Principal Component Analysis (PCA)
+* Non-linear dimensionality reduction using:
+
+  * t-SNE
+  * UMAP
+* Visualization of reduced feature spaces
+* Comparison of linear and non-linear representations
+
+### Notebook 3: Classification
+
+* Binary classification using Logistic Regression
+* Model evaluation and validation
+* Performance comparison across different feature representations
+
+---
+
+## Dataset
+
+This project uses data from the **MIGHTEE (MeerKAT International GigaHertz Tiered Extragalactic Exploration)** survey.
+
+The dataset contains **5,224 radio sources**, each labelled as one of the following classes:
+
+* [Star-Forming Galaxies (SFGs)](https://www.cfa.harvard.edu/news/understanding-star-forming-galaxies)
+* [Active Galactic Nuclei (AGNs)](https://en.wikipedia.org/wiki/Active_galactic_nucleus)
+
+Each source is described by a collection of astrophysical features, including:
+
+* Multi-wavelength flux measurements
+* Morphological properties
+* Structural parameters
+* Derived physical quantities
+
+The goal is to determine whether machine learning techniques can successfully distinguish between AGN- and SFG-dominated sources.
+
+---
+
+## Repository Structure
+
+```text
+├── 1-Data_Exploration.ipynb
+├── 2-Dimension_Reduction.ipynb
+├── 3-Classification_Logistic_Regression.ipynb
+└── data/
+    ├── normalized_mightee.csv
+    └── y.csv
 ```
 
+Where:
 
-### New to Github?
+* `normalized_mightee.csv` contains the preprocessed feature matrix generated in Notebook 1.
+* `y.csv` contains the corresponding class labels.
 
-The easiest way to get all of the lecture and tutorial material is to clone this repository. To do this you need git installed on your laptop. If you're working on Linux you can install git using apt-get (you might need to use sudo):
+---
 
-```
-apt install git
-```
+## Hackathon Challenge
 
-You can then clone the repository by typing:
+Your task is to investigate how different feature representations affect classification performance.
 
-```
-git clone https://github.com/Hack4Dev/mightee_hack.git
-```
+### Part 1: Data Exploration
 
-To update your clone if changes are made, use:
+1. Complete all exercises in **Notebook 1**.
+2. Familiarize yourself with the dataset and preprocessing pipeline.
 
-```
-cd mightee_hack/
-git pull
-```
+### Part 2: Dimensionality Reduction
 
-----
+Using the processed data:
+
+1. Apply **PCA** and investigate how much variance can be retained using a reduced number of components.
+2. Apply **t-SNE**, **UMAP**, or both to obtain low-dimensional representations of the data.
+3. Visualize the resulting feature spaces and compare the separation between AGNs and SFGs.
+
+### Part 3: Classification
+
+Train and evaluate a Logistic Regression classifier using:
+
+* The original normalized feature set
+* PCA-transformed features
+* t-SNE embeddings
+* UMAP embeddings
+
+Compare the performance of each representation using appropriate evaluation metrics.
+
+### Part 4: Model Optimization
+
+1. Identify the best-performing feature representation.
+2. Perform hyperparameter optimization on the Logistic Regression model.
+3. Determine whether optimization improves classification performance.
+
+### Part 5: Advanced Investigation
+
+Train and evaluate an alternative machine learning model, such as:
+
+* Support Vector Machine (SVM)
+* Random Forest
+* Gradient Boosting
+* Neural Network
+
+Compare its performance against Logistic Regression and discuss any improvements.
+
+---
+
+## Report Requirements
+
+Prepare a short report summarizing your methodology, results, and conclusions.
+
+Your report should include:
+
+* Description of preprocessing steps
+* Dimensionality reduction results
+* Classification performance comparison
+* Hyperparameter optimization results
+* Discussion of model strengths and weaknesses
+
+Include the following diagnostic visualizations where appropriate:
+
+* Confusion Matrix
+* ROC Curve
+* Precision–Recall Curve
+* Feature-space visualizations (PCA, t-SNE, UMAP)
+
+---
+
+## Key Scientific Question
+
+Can machine learning distinguish between radio sources powered by star formation and those powered by supermassive black hole activity, and which feature representation provides the most effective separation?
+
+Good luck, and happy hacking!
