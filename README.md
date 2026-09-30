@@ -4,7 +4,7 @@
 
 Welcome to the MIGHTEE Hackathon!
 
-In this project, you will apply modern data science and machine learning techniques to tackle a real astrophysical classification problem using data from one of the deepest radio continuum surveys ever conducted.
+In this project, you will apply modern data science and machine learning techniques to tackle a real astrophysical classification problem using data from one of the deepest radio continuum surveys.
 
 Radio emission from galaxies is primarily powered by two physical processes: **star formation** and **accretion onto supermassive black holes**. Distinguishing between sources dominated by these mechanisms is essential for understanding galaxy evolution and maximizing the scientific return of current and future radio surveys.
 
@@ -12,7 +12,7 @@ Through a series of guided Jupyter notebooks, you will build a complete machine 
 
 By the end of this project, you will have:
 
-* Explored and cleaned a MIGHTEE dataset.
+* Explored and cleaned a Multi-wavelength MIGHTEE dataset.
 * Applied dimensionality reduction techniques to high-dimensional data.
 * Investigated both linear and non-linear feature representations.
 * Built and evaluated machine learning classifiers.
